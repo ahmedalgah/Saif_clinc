@@ -113,25 +113,10 @@ const chatMessages=document.getElementById('chatMessages'),chatForm=document.get
 function toggleChat(open){chatPanel.classList.toggle('open',open);chatLaunch.setAttribute('aria-expanded',String(open));if(open)chatInput.focus();}
 chatLaunch.addEventListener('click',()=>toggleChat(!chatPanel.classList.contains('open')));chatClose.addEventListener('click',()=>toggleChat(false));
 function addChatMessage(text,who){const el=document.createElement('div');el.className='chat-msg '+who;el.textContent=text;chatMessages.appendChild(el);chatMessages.scrollTop=chatMessages.scrollHeight;return el;}
-function clinicFAQ(text){
- const q=text.toLowerCase().replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/[؟?!.,،؛]/g,' ').trim();
- if(/سلام|مرحبا|اهلا|هاي|السلام عليكم|صباح|مساء/.test(q)) return 'وعليكم السلام ورحمة الله، أهلاً بيك في عيادة سيف الدين محمد علي. ممكن أساعدك بمعلومات العيادة أو طريقة طلب موعد.';
- if(/وين|موقع|عنوان|مكان|كيف اصل|القضارف|الرواشده/.test(q)) return 'عنوان العيادة: قرية الرواشدة، ولاية القضارف، السودان. لو محتاج توجيه أدق، اتصل بالعيادة قبل التحرك.';
- if(/موعد|احجز|حجز|اكشف|كشف/.test(q)) return 'لطلب موعد، استخدم نموذج «حجز موعد» في الموقع وسيتم فتح واتساب برسالة جاهزة. إرسال الطلب لا يعني تأكيد الموعد؛ انتظر رد العيادة.';
- if(/رقم|اتصال|تواصل|واتساب|تلفون/.test(q)) return 'رقم التواصل المدرج بالموقع هو 0111441216. يُرجى التأكد من الرقم مباشرة مع العيادة، خصوصاً قبل إرسال معلومات شخصية.';
- if(/ساعات|متى تفتح|متى تفتحوا|دوام|مفتوح|فاتحين/.test(q)) return 'مواعيد العمل لم تُحدَّد في الموقع حتى الآن. الأفضل الاتصال بالعيادة قبل الحضور.';
- if(/خدمات|بتعالجوا|تعالج|تخصص|طبيب|طب عام/.test(q)) return 'العيادة مُعرّفة في الموقع كعيادة طب عام. لتأكيد توفر خدمة معينة أو فحص محدد، تواصل مع العيادة مباشرة.';
- if(/طوارئ|ضيق تنفس|صعوبة تنفس|الم شديد|نزيف شديد|اغماء|فقدان الوعي|تشنج|وجع صدر|الم الصدر/.test(q)) return 'لو في صعوبة تنفس، ألم شديد بالصدر، نزيف شديد، إغماء أو تشنج، توجّه لأقرب طوارئ فوراً ولا تنتظر رد المساعد.';
- if(/ملاريا|حمى|سخانة|حرارة|قشعريرة/.test(q)) return 'الحمى أو الاشتباه في الملاريا يحتاج فحصاً وتقييماً من مختص، وما ممكن نؤكد التشخيص من المحادثة. لا تبدأ علاجاً من نفسك؛ اطلب رعاية طبية، وبصورة عاجلة إذا كانت الأعراض شديدة.';
- if(/حامل|حمل|الدوره|الدورة|نزيف/.test(q)) return 'المساعد لا يستطيع تأكيد الحمل أو تقييم سبب النزيف. اختبار الحمل وتقييم الطبيب هما الأنسب. إذا كان هناك نزيف غزير أو ألم شديد بالبطن أو دوخة/إغماء، اطلب رعاية عاجلة.';
- if(/دواء|علاج|حبوب|جرعه|جرعة|مضاد|وصفه|وصفة/.test(q)) return 'ما بقدر أوصف دواء أو أحدد جرعة عبر هذا المساعد. اسأل طبيباً أو صيدلياً مؤهلاً، خاصةً للأطفال والحوامل أو عند وجود أمراض مزمنة.';
- if(/شكرا|مشكور|تسلم/.test(q)) return 'العفو، تحت أمرك. لو عندك استفسار عن موقع العيادة أو طلب موعد اكتب لي.';
- return 'أنا مساعد أسئلة شائعة مجاني، ما عندي ذكاء اصطناعي مفتوح حالياً. أقدر أساعدك بموقع العيادة، طلب موعد، التواصل، ومعلومات عامة. للاستشارة الطبية الخاصة، تواصل مع الطبيب ولا ترسل بياناتك الصحية الحساسة هنا.';
-}
-async function sendChat(text){if(!text.trim())return;addChatMessage(text,'user');chatInput.value='';chatSend.disabled=true;chatInput.disabled=true;const pending=addChatMessage('لحظة...','bot');
- pending.textContent=clinicFAQ(text);
- chatSend.disabled=false;chatInput.disabled=false;chatInput.focus();chatMessages.scrollTop=chatMessages.scrollHeight;
-}
+async function sendChat(text){if(!text.trim())return;addChatMessage(text,'user');chatInput.value='';chatSend.disabled=true;chatInput.disabled=true;const pending=addChatMessage('لحظة، جاري تجهيز الرد...','bot');
+try{const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text})});const data=await response.json();pending.textContent=data.reply||'عذراً، ما قدرت أجهّز الرد الآن. حاول لاحقاً أو تواصل مع العيادة.';}
+catch(err){pending.textContent='المساعد الذكي غير مربوط بالخادم حالياً. عند تفعيل خدمة المحادثة سيظهر الرد هنا. للاستفسارات العاجلة، تواصل مباشرة مع العيادة.';}
+finally{chatSend.disabled=false;chatInput.disabled=false;chatInput.focus();chatMessages.scrollTop=chatMessages.scrollHeight;}}
 chatForm.addEventListener('submit',e=>{e.preventDefault();sendChat(chatInput.value);});
 document.querySelectorAll('[data-chat]').forEach(b=>b.addEventListener('click',()=>sendChat(b.dataset.chat)));
 
