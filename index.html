@@ -1,139 +1,310 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#1264a3">
-<meta name="description" content="الموقع التعريفي لعيادة سيف الدين محمد علي للطب العام في القضارف، السودان.">
-<title>عيادة سيف الدين محمد علي | القضارف</title>
-<style>
-:root{--blue:#1264a3;--navy:#103a5c;--sky:#eaf5fc;--pale:#f6fbff;--ink:#18354a;--muted:#5d7485;--white:#fff;--line:#d9e8f2;--green:#16845b}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Tahoma,Arial,sans-serif;color:var(--ink);background:white;line-height:1.8}a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:78px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy)}.logo{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:var(--blue);color:white;box-shadow:0 8px 18px #1264a32a}.brand small{display:block;font-size:12px;color:var(--muted);font-weight:500}.links{display:flex;gap:22px;align-items:center;font-size:14px}.links a:hover{color:var(--blue)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 18px;font:inherit;font-weight:700;cursor:pointer;transition:.2s}.btn-primary{background:var(--blue);color:white;box-shadow:0 8px 20px #1264a326}.btn-primary:hover{background:#0d548b;transform:translateY(-1px)}.btn-outline{border:1px solid #b8d5e9;background:white;color:var(--blue)}.hero{background:radial-gradient(circle at 15% 20%,#d5edfc 0,transparent 32%),linear-gradient(135deg,#f7fcff,#eaf5fc);padding:74px 0 68px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;color:var(--blue);font-size:13px;font-weight:700}.hero h1{font-size:clamp(32px,4.4vw,54px);line-height:1.35;margin:18px 0;color:var(--navy)}.hero h1 span{color:var(--blue)}.hero p{font-size:17px;color:var(--muted);max-width:590px;margin:0 0 25px}.actions{display:flex;flex-wrap:wrap;gap:12px}.visual{min-height:370px;position:relative;display:grid;place-items:center}.medical-card{width:min(370px,100%);background:white;border:1px solid #dcecf6;border-radius:30px;padding:28px;box-shadow:0 25px 65px #103a5c18;position:relative}.doctor-icon{height:200px;border-radius:22px;background:linear-gradient(145deg,#e4f4ff,#f8fcff);display:grid;place-items:center;color:var(--blue)}.doctor-icon svg{width:135px;height:135px}.medical-card h3{margin:18px 0 2px;color:var(--navy);font-size:20px}.medical-card p{margin:0;font-size:14px}.float{position:absolute;background:white;border:1px solid var(--line);box-shadow:0 12px 35px #103a5c12;border-radius:16px;padding:12px 16px;font-size:13px;font-weight:700}.float.one{top:22px;right:-5px}.float.two{bottom:18px;left:-4px}.float b{color:var(--blue);font-size:19px;display:block}.section{padding:74px 0}.section.soft{background:var(--pale)}.section-head{text-align:center;max-width:680px;margin:0 auto 36px}.section-head .kicker{color:var(--blue);font-size:13px;font-weight:800}.section-head h2{font-size:clamp(25px,3vw,36px);color:var(--navy);margin:7px 0}.section-head p{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:20px;padding:24px;background:white;box-shadow:0 8px 26px #103a5c06}.card-icon{display:grid;place-items:center;width:54px;height:54px;border-radius:16px;background:var(--sky);color:var(--blue);margin-bottom:15px}.card-icon svg{width:27px;height:27px}.card h3{margin:0 0 7px;color:var(--navy);font-size:19px}.card p{margin:0;color:var(--muted);font-size:14px}.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:center}.about-art{background:linear-gradient(140deg,#e4f4ff,#f7fbff);border-radius:26px;min-height:290px;display:grid;place-items:center;color:var(--blue)}.about-art svg{width:145px;height:145px}.about h2{font-size:32px;color:var(--navy);margin:0 0 12px}.about p{color:var(--muted)}.ticks{display:grid;gap:10px;margin-top:20px}.ticks span{display:flex;gap:10px;align-items:center;font-weight:700}.check{color:var(--green);font-weight:900}.booking{background:linear-gradient(135deg,var(--navy),var(--blue));color:white;border-radius:28px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.booking h2{font-size:30px;margin:0 0 8px}.booking p{color:#e0f1fc;margin:0}.form{background:white;color:var(--ink);padding:22px;border-radius:20px;display:grid;gap:12px}.form label{font-size:13px;font-weight:700;color:var(--navy)}.form input,.form select,.form textarea{width:100%;padding:12px;border:1px solid #d5e4ee;border-radius:10px;font:inherit;background:#fbfdff;color:var(--ink)}.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid #9ccff0;border-color:var(--blue)}.form small{color:var(--muted);font-size:12px}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.contact-item{padding:22px;border:1px solid var(--line);border-radius:18px;display:flex;gap:14px;align-items:flex-start}.contact-item .card-icon{flex-shrink:0;margin:0;width:45px;height:45px}.contact-item h3{font-size:16px;margin:0 0 4px;color:var(--navy)}.contact-item p{margin:0;color:var(--muted);font-size:14px}.note{background:#fff8e7;border:1px solid #f3dfa6;color:#76581a;border-radius:12px;padding:12px 15px;font-size:13px;margin-top:18px}footer{background:#092e4b;color:#eaf5fc;padding:30px 0}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-row small{color:#b9d2e3}.mobile-menu{display:none}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيادة سيف الدين محمد علي | القضارف</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #1EBE5D;
+            --bg-gradient: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
 
-.chat-launch{position:fixed;bottom:20px;left:20px;z-index:30;border:0;border-radius:999px;background:var(--blue);color:#fff;padding:14px 18px;box-shadow:0 12px 30px #103a5c30;font:inherit;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:9px}
-.chat-launch .bubble-icon{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#ffffff25;font-size:17px}
-.chat-panel{position:fixed;bottom:86px;left:20px;width:min(370px,calc(100vw - 28px));height:min(560px,calc(100dvh - 115px));background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 20px 65px #103a5c30;z-index:31;display:none;overflow:hidden;flex-direction:column}
-.chat-panel.open{display:flex}.chat-head{background:linear-gradient(135deg,var(--navy),var(--blue));color:white;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:10px}.chat-head strong{display:block}.chat-head small{color:#d8ecf8}.chat-close{border:0;background:#ffffff20;color:#fff;border-radius:10px;width:34px;height:34px;font-size:22px;cursor:pointer}.chat-disclaimer{padding:9px 12px;background:#fff8e7;color:#76581a;font-size:11px;line-height:1.6;border-bottom:1px solid #f2e2b6}.chat-messages{padding:13px;display:flex;flex-direction:column;gap:10px;overflow:auto;flex:1;background:#f7fbfe}.chat-msg{max-width:90%;padding:10px 12px;border-radius:15px;font-size:13px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}.chat-msg.bot{background:#fff;border:1px solid var(--line);align-self:flex-start;border-top-right-radius:5px}.chat-msg.user{background:#dceffc;color:#103a5c;align-self:flex-end;border-top-left-radius:5px}.chat-quick{display:flex;gap:6px;flex-wrap:wrap;padding:0 12px 10px;background:#f7fbfe}.chat-quick button{border:1px solid #b8d5e9;border-radius:999px;background:#fff;color:var(--blue);font:inherit;font-size:11px;padding:6px 9px;cursor:pointer}.chat-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:white}.chat-form input{min-width:0;flex:1;border:1px solid #d5e4ee;border-radius:12px;padding:11px;font:inherit;font-size:13px}.chat-form button{border:0;border-radius:12px;background:var(--blue);color:white;padding:0 14px;font:inherit;font-weight:700;cursor:pointer}.chat-form button:disabled{opacity:.5;cursor:wait}
-@media(max-width:520px){.chat-launch{bottom:14px;left:14px}.chat-panel{left:10px;bottom:76px;width:calc(100vw - 20px);height:min(560px,calc(100dvh - 94px))}}
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg-gradient);
+            margin: 0;
+            padding: 20px;
+            direction: rtl;
+            text-align: right;
+            color: var(--text-main);
+            min-height: 100vh;
+        }
 
-@media(max-width:800px){.links{display:none}.mobile-menu{display:inline-flex}.hero{padding:48px 0}.hero-grid,.about-grid,.booking{grid-template-columns:1fr}.hero-grid{gap:20px}.visual{min-height:330px}.medical-card{max-width:340px}.float.one{right:0}.float.two{left:0}.cards{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}.section{padding:54px 0}.booking{padding:25px}.footer-row{align-items:flex-start;flex-direction:column}}
-@media(max-width:520px){.cards{grid-template-columns:1fr}.brand{font-size:14px}.brand small{font-size:11px}.logo{width:42px;height:42px}.hero h1{font-size:34px}.hero p{font-size:15px}.actions .btn{width:100%}.visual{min-height:300px}.medical-card{padding:18px}.doctor-icon{height:165px}.section-head{margin-bottom:25px}.about h2,.booking h2{font-size:26px}}
-</style>
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 25px 20px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
+        }
+
+        .header h1 {
+            margin: 0 0 8px 0;
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .header p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .btn-booking {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+            color: white;
+            text-align: center;
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 17px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px -4px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-booking:active {
+            transform: scale(0.98);
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .card-icon {
+            font-size: 24px;
+            background: #f1f5f9;
+            padding: 12px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-content h3 {
+            margin: 0 0 6px 0;
+            font-size: 16px;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .card-content p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .whatsapp-link {
+            color: var(--whatsapp);
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        .chat-container {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+            margin-top: 25px;
+        }
+
+        .chat-header {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chat-box {
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 12px;
+            background: #f8fafc;
+            margin-bottom: 12px;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .message {
+            padding: 10px 14px;
+            border-radius: 12px;
+            max-width: 85%;
+            line-height: 1.5;
+        }
+
+        .user-msg {
+            background: var(--primary);
+            color: white;
+            margin-right: auto;
+            border-bottom-left-radius: 4px;
+        }
+
+        .ai-msg {
+            background: #e2e8f0;
+            color: var(--text-main);
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-input-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            font-size: 14px;
+            outline: none;
+            font-family: 'Cairo', sans-serif;
+            transition: border-color 0.2s;
+        }
+
+        .chat-input:focus {
+            border-color: var(--primary);
+        }
+
+        .chat-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            font-family: 'Cairo', sans-serif;
+            transition: background 0.2s;
+        }
+
+        .chat-btn:hover {
+            background: var(--primary-dark);
+        }
+    </style>
 </head>
 <body>
-<header>
-  <div class="container nav">
-    <a class="brand" href="#home" aria-label="العودة للرئيسية">
-      <span class="logo"><svg viewBox="0 0 48 48" width="30" height="30" fill="none" aria-hidden="true"><path d="M20 7h8v13h13v8H28v13h-8V28H7v-8h13V7Z" fill="currentColor"/></svg></span>
-      <span>عيادة سيف الدين محمد علي<small>طب عام · القضارف</small></span>
-    </a>
-    <nav class="links" aria-label="التنقل"><a href="#services">الخدمات</a><a href="#about">عن العيادة</a><a href="#booking">حجز موعد</a><a href="#contact">التواصل</a></nav>
-    <a class="btn btn-primary" href="#booking">احجز موعدك</a>
-  </div>
-</header>
-<main>
-<section class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <span class="eyebrow"><span>✚</span> رعاية صحية أقرب إليك</span>
-      <h1>صحتك تهمنا،<br><span>ورعايتك أولويتنا</span></h1>
-      <p>مرحباً بكم في عيادة سيف الدين محمد علي للطب العام بمدينة القضارف. نسعى إلى تقديم رعاية طبية محترمة واهتمام بكل مراجع.</p>
-      <div class="actions"><a class="btn btn-primary" href="#booking">طلب موعد <span>←</span></a><a class="btn btn-outline" href="#services">تعرّف على الخدمات</a></div>
+
+    <div class="container">
+        <!-- الترويسة -->
+        <div class="header">
+            <h1>🏥 عيادة سيف الدين محمد علي</h1>
+            <p>طب عام • القضارف - قرية الراشدية</p>
+        </div>
+
+        <!-- زر الحجز العصري -->
+        <a href="https://wa.me/249111441216?text=السلام%20عليكم،%20أريد%20حجز%20موعد%20في%20العيادة" target="_blank" class="btn-booking">
+            📅 احجز موعدك الآن عبر الواتساب
+        </a>
+
+        <!-- الموقع -->
+        <div class="card">
+            <div class="card-icon">📍</div>
+            <div class="card-content">
+                <h3>الموقع</h3>
+                <p>قرية الراشدية، ولاية القضارف، السودان.</p>
+            </div>
+        </div>
+
+        <!-- الهاتف -->
+        <div class="card">
+            <div class="card-icon">📞</div>
+            <div class="card-content">
+                <h3>التواصل المباشر</h3>
+                <p>رقم الهاتف والواتساب:</p>
+                <a href="https://wa.me/249111441216" target="_blank" class="whatsapp-link">💬 0111441216</a>
+            </div>
+        </div>
+
+        <!-- ساعات العمل -->
+        <div class="card">
+            <div class="card-icon">⏰</div>
+            <div class="card-content">
+                <h3>ساعات العمل</h3>
+                <p><strong>السبت - الخميس:</strong> طوال اليوم (صباحاً ومساءً)</p>
+                <p><strong>الجمعة:</strong> الفترة المسائية فقط</p>
+            </div>
+        </div>
+
+        <!-- المساعد الطبي -->
+        <div class="chat-container">
+            <div class="chat-header">🤖 اسأل المساعد الطبي الذكي</div>
+            <div class="chat-box" id="chatBox">
+                <div class="message ai-msg">أهلاً بك! أنا المساعد الطبي لعيادة سيف الدين. كيف يمكنني خدمتك اليوم؟</div>
+            </div>
+            <div class="chat-input-group">
+                <input type="text" id="userInput" class="chat-input" placeholder="اكتب استفسارك الطبي هنا..." onkeypress="handleKeyPress(event)">
+                <button class="chat-btn" onclick="sendMessage()">إرسال</button>
+            </div>
+        </div>
     </div>
-    <div class="visual" aria-label="رسم توضيحي طبي">
-      <div class="medical-card">
-        <div class="doctor-icon"><svg viewBox="0 0 160 160" fill="none" aria-hidden="true"><circle cx="80" cy="80" r="70" fill="#D3ECFC"/><path d="M51 47c0-16 13-29 29-29s29 13 29 29v15c0 16-13 29-29 29S51 78 51 62V47Z" fill="#fff" stroke="#1264A3" stroke-width="4"/><path d="M39 139c3-25 20-39 41-39s38 14 41 39" fill="#fff" stroke="#1264A3" stroke-width="4" stroke-linecap="round"/><path d="M80 109v25M68 121h24" stroke="#1264A3" stroke-width="5" stroke-linecap="round"/><path d="M52 59c10 0 17-7 21-14 7 9 17 14 34 14" stroke="#1264A3" stroke-width="4" stroke-linecap="round"/></svg></div>
-        <h3>عيادة سيف الدين محمد علي</h3><p>طب عام · القضارف، السودان</p>
-      </div>
-      <div class="float one"><b>✚</b>اهتمام بصحتك</div>
-      <div class="float two"><b>♥</b>رعاية باحترام</div>
-    </div>
-  </div>
-</section>
-<section class="section" id="services">
-  <div class="container">
-    <div class="section-head"><span class="kicker">خدماتنا</span><h2>رعاية طبية لاحتياجاتك اليومية</h2><p>معلومات عامة عن الخدمات المقترحة لعيادة الطب العام. تُحدَّث القائمة حسب الخدمات المتوفرة فعلياً بالعيادة.</p></div>
-    <div class="cards">
-      <article class="card"><div class="card-icon"><svg viewBox="0 0 32 32" fill="none"><path d="M16 27S4 20 4 11a6 6 0 0 1 12-1 6 6 0 0 1 12 1c0 9-12 16-12 16Z" stroke="currentColor" stroke-width="2.4"/><path d="M16 12v8M12 16h8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><h3>الكشف الطبي العام</h3><p>تقييم الأعراض ومراجعة الحالة الصحية وتوجيه المراجع للخطوة المناسبة.</p></article>
-      <article class="card"><div class="card-icon"><svg viewBox="0 0 32 32" fill="none"><path d="M10 4h12M12 4v10L5 25a3 3 0 0 0 3 4h16a3 3 0 0 0 3-4l-7-11V4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22h14" stroke="currentColor" stroke-width="2.2"/></svg></div><h3>المتابعة الصحية</h3><p>متابعة الحالة الصحية حسب تقييم الطبيب والخطة العلاجية المتفق عليها.</p></article>
-      <article class="card"><div class="card-icon"><svg viewBox="0 0 32 32" fill="none"><rect x="5" y="5" width="22" height="22" rx="4" stroke="currentColor" stroke-width="2.2"/><path d="M16 10v12M10 16h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div><h3>الإرشاد الصحي</h3><p>إرشادات للوقاية والعناية بالصحة، مع الإحالة عند الحاجة إلى اختصاص مناسب.</p></article>
-    </div>
-  </div>
-</section>
-<section class="section soft" id="about">
- <div class="container about-grid">
-  <div class="about-art"><svg viewBox="0 0 160 160" fill="none" aria-hidden="true"><path d="M42 23h76a9 9 0 0 1 9 9v96a9 9 0 0 1-9 9H42a9 9 0 0 1-9-9V32a9 9 0 0 1 9-9Z" fill="#fff" stroke="#1264A3" stroke-width="4"/><path d="M59 23v-7h42v7" stroke="#1264A3" stroke-width="4" stroke-linecap="round"/><path d="M80 47v37M61 66h38" stroke="#1264A3" stroke-width="8" stroke-linecap="round"/><path d="M52 105h56M52 119h37" stroke="#A5D8F4" stroke-width="5" stroke-linecap="round"/></svg></div>
-  <div class="about"><span class="kicker" style="color:var(--blue);font-weight:800;font-size:13px">عن العيادة</span><h2>اهتمام إنساني ورعاية مسؤولة</h2><p>تستقبل عيادة سيف الدين محمد علي مراجعيها في مدينة القضارف لتقديم خدمات الطب العام. نؤمن بأهمية الاستماع للمريض، وشرح الخيارات المتاحة، واحترام خصوصية كل مراجع.</p><div class="ticks"><span><i class="check">✓</i> التعامل باحترام واهتمام</span><span><i class="check">✓</i> توضيح الخطوات للمراجع</span><span><i class="check">✓</i> المحافظة على خصوصية المعلومات</span></div></div>
- </div>
-</section>
-<section class="section" id="booking">
- <div class="container">
-  <div class="booking">
-   <div><h2>اطلب موعدك بسهولة</h2><p>أدخل بياناتك الأساسية، ثم أرسل الطلب عبر واتساب بعد إضافة رقم العيادة الصحيح في إعدادات الموقع. لا تكتب تفاصيل طبية حساسة في النموذج.</p></div>
-   <form class="form" id="appointmentForm">
-    <div><label for="patientName">الاسم</label><input id="patientName" name="patientName" autocomplete="name" required placeholder="اكتب اسمك"></div>
-    <div><label for="patientPhone">رقم الهاتف</label><input id="patientPhone" name="patientPhone" autocomplete="tel" inputmode="tel" required placeholder="رقم للتواصل"></div>
-    <div><label for="visitDate">التاريخ المفضّل</label><input id="visitDate" name="visitDate" type="date" required></div>
-    <div><label for="visitReason">نوع الزيارة</label><select id="visitReason" name="visitReason"><option>كشف طبي عام</option><option>متابعة</option><option>استفسار عن موعد</option></select></div>
-    <button class="btn btn-primary" type="submit">إرسال طلب الموعد عبر واتساب</button>
-    <small id="formMessage" aria-live="polite">هذا طلب موعد وليس تأكيداً للحجز. يجب تأكيد الموعد مع العيادة.</small>
-   </form>
-  </div>
- </div>
-</section>
-<section class="section soft" id="contact">
- <div class="container">
-  <div class="section-head"><span class="kicker">تواصل معنا</span><h2>يسعدنا استقبال استفساراتكم</h2><p>العيادة في قرية الرواشدة بولاية القضارف. أُضيف رقم التواصل الذي زوّدنا به المستخدم، وتبقى ساعات العمل بحاجة إلى تأكيد.</p></div>
-  <div class="contact-grid">
-   <div class="contact-item"><div class="card-icon"><svg viewBox="0 0 32 32" fill="none"><path d="M26 13c0 8-10 16-10 16S6 21 6 13a10 10 0 1 1 20 0Z" stroke="currentColor" stroke-width="2.2"/><circle cx="16" cy="13" r="3" stroke="currentColor" stroke-width="2.2"/></svg></div><div><h3>الموقع</h3><p>قرية الرواشدة، ولاية القضارف، السودان.</p></div></div>
-   <div class="contact-item"><div class="card-icon"><svg viewBox="0 0 32 32" fill="none"><path d="M9 4h14a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z" stroke="currentColor" stroke-width="2.2"/><path d="M12 8h8M14 24h4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></div><div><h3>الهاتف وواتساب</h3><p>أضف رقم التواصل الرسمي للعيادة.</p></div></div>
-   <div class="contact-item"><div class="card-icon"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2.2"/><path d="M16 9v7l5 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></div><div><h3>ساعات العمل</h3><p>تُضاف أيام وساعات العمل بعد تأكيدها.</p></div></div>
-  </div>
-  <div class="note">ملاحظة: هذا قالب أولي للموقع. قبل نشره، أضف رقم الهاتف والعنوان التفصيلي وساعات العمل والخدمات المؤكدة. لا يُعد النموذج حجزاً مؤكداً ولا بديلاً عن الاستشارة الطبية.</div>
- </div>
-</section>
-</main>
-<footer><div class="container footer-row"><div><strong>عيادة سيف الدين محمد علي</strong><br><small>طب عام · القضارف، السودان</small></div><small>© <span id="year"></span> جميع الحقوق محفوظة</small></div></footer>
 
-<button class="chat-launch" id="chatLaunch" type="button" aria-expanded="false" aria-controls="clinicChat"><span class="bubble-icon">✦</span> اسأل المساعد الطبي</button>
-<section class="chat-panel" id="clinicChat" role="dialog" aria-label="المساعد الذكي لعيادة سيف الدين محمد علي">
-  <div class="chat-head"><div><strong>المساعد الذكي للعيادة</strong><small>معلومات عامة واستفسارات العيادة</small></div><button class="chat-close" id="chatClose" type="button" aria-label="إغلاق المحادثة">×</button></div>
-  <div class="chat-disclaimer">مساعد معلوماتي وليس طبيباً. لا يشخّص الحالات ولا يصف الأدوية. لا ترسل اسمك الكامل أو بياناتك الطبية الحساسة. عند الطوارئ اطلب الرعاية العاجلة مباشرة.</div>
-  <div class="chat-messages" id="chatMessages" aria-live="polite"><div class="chat-msg bot">أهلاً بيك في عيادة سيف الدين محمد علي. كيف أقدر أساعدك؟ أقدر أجاوب عن معلومات العيادة أو أقدّم معلومات صحية عامة.</div></div>
-  <div class="chat-quick"><button type="button" data-chat="وين موقع العيادة؟">موقع العيادة</button><button type="button" data-chat="كيف أحجز موعد؟">حجز موعد</button><button type="button" data-chat="ما الحالات التي تحتاج طوارئ؟">حالات الطوارئ</button></div>
-  <form class="chat-form" id="chatForm"><input id="chatInput" maxlength="1000" autocomplete="off" placeholder="اكتب سؤالك هنا..." aria-label="اكتب سؤالك" required><button id="chatSend" type="submit">إرسال</button></form>
-</section>
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const chatBox = document.getElementById('chatBox');
+            const message = input.value.trim();
 
-<script>
-document.getElementById('year').textContent=new Date().getFullYear();
+            if (!message) return;
 
-const chatLaunch=document.getElementById('chatLaunch'),chatPanel=document.getElementById('clinicChat'),chatClose=document.getElementById('chatClose');
-const chatMessages=document.getElementById('chatMessages'),chatForm=document.getElementById('chatForm'),chatInput=document.getElementById('chatInput'),chatSend=document.getElementById('chatSend');
-function toggleChat(open){chatPanel.classList.toggle('open',open);chatLaunch.setAttribute('aria-expanded',String(open));if(open)chatInput.focus();}
-chatLaunch.addEventListener('click',()=>toggleChat(!chatPanel.classList.contains('open')));chatClose.addEventListener('click',()=>toggleChat(false));
-function addChatMessage(text,who){const el=document.createElement('div');el.className='chat-msg '+who;el.textContent=text;chatMessages.appendChild(el);chatMessages.scrollTop=chatMessages.scrollHeight;return el;}
-async function sendChat(text){if(!text.trim())return;addChatMessage(text,'user');chatInput.value='';chatSend.disabled=true;chatInput.disabled=true;const pending=addChatMessage('لحظة، جاري تجهيز الرد...','bot');
-try{const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text})});const data=await response.json();pending.textContent=data.reply||'عذراً، ما قدرت أجهّز الرد الآن. حاول لاحقاً أو تواصل مع العيادة.';}
-catch(err){pending.textContent='المساعد الذكي غير مربوط بالخادم حالياً. عند تفعيل خدمة المحادثة سيظهر الرد هنا. للاستفسارات العاجلة، تواصل مباشرة مع العيادة.';}
-finally{chatSend.disabled=false;chatInput.disabled=false;chatInput.focus();chatMessages.scrollTop=chatMessages.scrollHeight;}}
-chatForm.addEventListener('submit',e=>{e.preventDefault();sendChat(chatInput.value);});
-document.querySelectorAll('[data-chat]').forEach(b=>b.addEventListener('click',()=>sendChat(b.dataset.chat)));
+            chatBox.innerHTML += `<div class="message user-msg">${message}</div>`;
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
 
-const dateInput=document.getElementById('visitDate');
-const today=new Date();dateInput.min=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
-document.getElementById('appointmentForm').addEventListener('submit',function(e){
- e.preventDefault();
- const clinicWhatsApp='249111441216'; // رقم واتساب العيادة بصيغة دولية
- const msg=document.getElementById('formMessage');
- if(!clinicWhatsApp){msg.textContent='النموذج جاهز، لكن يلزم إضافة رقم واتساب العيادة داخل ملف الموقع حتى يعمل الإرسال.';return;}
- const name=document.getElementById('patientName').value.trim();
- const phone=document.getElementById('patientPhone').value.trim();
- const date=document.getElementById('visitDate').value;
- const reason=document.getElementById('visitReason').value;
- const text=`السلام عليكم، أود طلب موعد في عيادة سيف الدين محمد علي.\nالاسم: ${name}\nرقم التواصل: ${phone}\nالتاريخ المفضل: ${date}\nنوع الزيارة: ${reason}\nأرجو تأكيد الموعد.`;
- window.open(`https://wa.me/${clinicWhatsApp}?text=${encodeURIComponent(text)}`,'_blank','noopener');
-});
-</script>
+            const loadingId = 'loading-' + Date.now();
+            chatBox.innerHTML += `<div class="message ai-msg" id="${loadingId}">جاري التحليل...</div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            try {
+                const response = await fetch('/ask-ai', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: message })
+                });
+
+                const data = await response.json();
+                document.getElementById(loadingId).innerText = data.reply || "عذراً، لم أتمكن من الحصول على رد.";
+            } catch (error) {
+                document.getElementById(loadingId).innerText = "حدث خطأ في الاتصال بالخادم.";
+            }
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+    </script>
+
 </body>
 </html>
