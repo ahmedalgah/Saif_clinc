@@ -29,22 +29,8 @@ def ask_ai():
         
         return jsonify({"reply": response.text})
     except Exception as e:
-        return jsonify({"reply": f"عذراً، حدث خطأ أثناء الاتصال بالمساعد الذكي: {str(e)}"})
+        return jsonify({"reply": f"عذراً، حدث خطأ أثناء الاتصال بالمساعد الذكي."})
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
-
-
-from flask import Flask, send_from_directory
-import os
-
-app = Flask(__name__, static_folder=".")
-
-@app.route("/")
-def home():
-    return send_from_directory(".", "index.html")
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
