@@ -1,310 +1,533 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عيادة سيف الدين محمد علي | القضارف</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --whatsapp: #25D366;
-            --whatsapp-dark: #1EBE5D;
-            --bg-gradient: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0969b5">
+<meta name="description" content="الموقع الرسمي لعيادة سيف الدين محمد علي في قرية الرواشدة، القضارف. خدمات طبية ومعلومات صحية تثقيفية.">
+<title>عيادة سيف الدين محمد علي | الرعاية الصحية</title>
 
-        body {
-            font-family: 'Cairo', sans-serif;
-            background: var(--bg-gradient);
-            margin: 0;
-            padding: 20px;
-            direction: rtl;
-            text-align: right;
-            color: var(--text-main);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 480px;
-            margin: 0 auto;
-        }
-
-        .header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 25px 20px;
-            border-radius: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
-        }
-
-        .header h1 {
-            margin: 0 0 8px 0;
-            font-size: 24px;
-            font-weight: 900;
-        }
-
-        .header p {
-            margin: 0;
-            font-size: 14px;
-            opacity: 0.9;
-            font-weight: 400;
-        }
-
-        .btn-booking {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
-            color: white;
-            text-align: center;
-            padding: 16px;
-            border-radius: 14px;
-            font-size: 17px;
-            font-weight: 700;
-            text-decoration: none;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 20px -4px rgba(37, 211, 102, 0.4);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .btn-booking:active {
-            transform: scale(0.98);
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 18px;
-            margin-bottom: 15px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-        }
-
-        .card-icon {
-            font-size: 24px;
-            background: #f1f5f9;
-            padding: 12px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card-content h3 {
-            margin: 0 0 6px 0;
-            font-size: 16px;
-            color: var(--text-main);
-            font-weight: 700;
-        }
-
-        .card-content p {
-            margin: 0;
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .whatsapp-link {
-            color: var(--whatsapp);
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 4px;
-        }
-
-        .chat-container {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-            margin-top: 25px;
-        }
-
-        .chat-header {
-            font-weight: 700;
-            font-size: 16px;
-            color: var(--primary);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .chat-box {
-            height: 200px;
-            overflow-y: auto;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 12px;
-            background: #f8fafc;
-            margin-bottom: 12px;
-            font-size: 14px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .message {
-            padding: 10px 14px;
-            border-radius: 12px;
-            max-width: 85%;
-            line-height: 1.5;
-        }
-
-        .user-msg {
-            background: var(--primary);
-            color: white;
-            margin-right: auto;
-            border-bottom-left-radius: 4px;
-        }
-
-        .ai-msg {
-            background: #e2e8f0;
-            color: var(--text-main);
-            margin-left: auto;
-            border-bottom-right-radius: 4px;
-        }
-
-        .chat-input-group {
-            display: flex;
-            gap: 8px;
-        }
-
-        .chat-input {
-            flex: 1;
-            padding: 12px 16px;
-            border: 1px solid #cbd5e1;
-            border-radius: 12px;
-            font-size: 14px;
-            outline: none;
-            font-family: 'Cairo', sans-serif;
-            transition: border-color 0.2s;
-        }
-
-        .chat-input:focus {
-            border-color: var(--primary);
-        }
-
-        .chat-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 0 20px;
-            border-radius: 12px;
-            cursor: pointer;
-            font-weight: 700;
-            font-family: 'Cairo', sans-serif;
-            transition: background 0.2s;
-        }
-
-        .chat-btn:hover {
-            background: var(--primary-dark);
-        }
-    </style>
+<style>
+:root {
+  --blue:#0875c9;
+  --deep:#073965;
+  --cyan:#20b8d5;
+  --pale:#edf7ff;
+  --text:#19344b;
+  --muted:#60758a;
+  --white:#fff;
+  --green:#159b62;
+  --shadow:0 12px 35px #164a7010;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth;scroll-padding-top:85px}
+body {
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.8;
+}
+a {color:inherit;text-decoration:none}
+button,input {font:inherit}
+button {cursor:pointer}
+img {max-width:100%}
+.container {width:min(1160px,92%);margin:auto}
+.topbar {background:var(--deep);color:#fff;font-size:13px;padding:8px 0}
+.topbar .container {display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+header {
+  background:#ffffffed;
+  position:sticky;top:0;z-index:1000;
+  border-bottom:1px solid #e6eef5;
+  backdrop-filter:blur(12px);
+}
+.nav {display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:76px}
+.brand {display:flex;align-items:center;gap:10px;color:var(--deep);font-weight:bold}
+.brand-logo {
+  display:grid;place-items:center;width:49px;height:49px;
+  border-radius:15px;background:var(--pale);color:var(--blue);font-size:27px
+}
+.brand small {display:block;font-size:11px;color:var(--muted);font-weight:normal}
+.navlinks {display:flex;gap:20px;align-items:center;font-size:14px}
+.navlinks a:hover {color:var(--blue)}
+.btn {
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:0;border-radius:12px;padding:12px 19px;
+  font-weight:bold;transition:.2s;
+}
+.btn:hover {transform:translateY(-2px)}
+.btn-primary {background:var(--blue);color:white}
+.btn-green {background:var(--green);color:white}
+.btn-outline {border:1px solid #cbddea;background:#fff;color:var(--deep)}
+.menu-btn {display:none;background:white;border:1px solid #dce8f2;border-radius:10px;padding:8px 12px}
+.hero {
+  overflow:hidden;position:relative;
+  background:linear-gradient(120deg,#f0f9ff,#fff 55%,#e8f7ff);
+  padding:65px 0 75px;
+}
+.hero:before {
+  content:"";position:absolute;width:380px;height:380px;
+  background:#d8f2ff;border-radius:50%;left:-140px;top:-150px;
+}
+.hero-grid {display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:45px;position:relative}
+.eyebrow {color:var(--blue);font-weight:bold;font-size:14px}
+.hero h1 {font-size:clamp(34px,5vw,55px);line-height:1.35;color:var(--deep);margin:12px 0}
+.hero h1 span {color:var(--blue)}
+.hero p {color:var(--muted);max-width:600px}
+.hero-actions {display:flex;flex-wrap:wrap;gap:12px;margin:25px 0}
+.hero-points {display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--deep)}
+.hero-visual {position:relative;display:grid;place-items:center;min-height:340px}
+.doctor-circle {
+  width:min(340px,85vw);aspect-ratio:1;border-radius:48% 52% 45% 55%;
+  background:linear-gradient(140deg,#c9eaff,#e9f8ff);
+  display:grid;place-items:center;position:relative;
+  box-shadow:0 25px 60px #0875c922;
+}
+.doctor-emoji {font-size:clamp(120px,19vw,190px);filter:drop-shadow(0 10px 10px #174a7020)}
+.float-card {
+  position:absolute;background:white;border-radius:15px;padding:12px 16px;
+  box-shadow:var(--shadow);font-size:13px
+}
+.float-card.one {top:12%;right:-5px}
+.float-card.two {bottom:9%;left:-5px}
+.float-card strong {display:block;color:var(--deep)}
+.section {padding:75px 0}
+.section-soft {background:#f6faff}
+.section-head {text-align:center;max-width:720px;margin:0 auto 35px}
+.section-head h2 {color:var(--deep);font-size:clamp(25px,4vw,35px);margin:6px 0}
+.section-head p {color:var(--muted)}
+.grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card {
+  background:#fff;border:1px solid #e4edf5;border-radius:19px;
+  padding:23px;box-shadow:var(--shadow)
+}
+.card-icon {
+  width:60px;height:60px;border-radius:17px;background:var(--pale);
+  display:grid;place-items:center;font-size:30px;margin-bottom:12px
+}
+.card h3 {color:var(--deep);margin:5px 0}
+.card p {font-size:14px;color:var(--muted);margin:5px 0 15px}
+.card-link {color:var(--blue);font-weight:bold;font-size:14px}
+.about-grid {display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.about-art {
+  min-height:310px;border-radius:25px;
+  background:linear-gradient(135deg,#e4f5ff,#f7fcff);
+  display:grid;place-items:center;font-size:125px;position:relative
+}
+.checklist {padding:0;list-style:none}
+.checklist li {margin:10px 0}
+.checklist li:before {content:"✓";color:var(--green);font-weight:bold;margin-left:10px}
+.med-search {
+  width:100%;padding:14px 16px;border:1px solid #d4e4f1;
+  border-radius:13px;outline:none;background:#fff
+}
+.med-search:focus {border-color:var(--blue);box-shadow:0 0 0 3px #0875c91b}
+.filters {display:flex;gap:9px;flex-wrap:wrap;margin:18px 0 25px}
+.filter {
+  background:white;border:1px solid #d8e6f1;color:var(--deep);
+  border-radius:30px;padding:9px 15px
+}
+.filter.active {background:var(--blue);color:#fff;border-color:var(--blue)}
+.med-card {display:flex;flex-direction:column;align-items:flex-start}
+.med-card .btn {margin-top:auto}
+.med-card .card-icon {font-size:28px}
+.med-dialog {
+  display:none;position:fixed;inset:0;z-index:2000;
+  background:#08233ad9;padding:18px;align-items:center;justify-content:center
+}
+.med-dialog.open {display:flex}
+.dialog-panel {
+  width:min(650px,100%);max-height:85vh;overflow:auto;background:#fff;
+  padding:25px;border-radius:20px
+}
+.dialog-panel h2 {color:var(--deep)}
+.dialog-close {float:left;background:#edf5fb;border:0;padding:8px 12px;border-radius:8px}
+.dialog-body {white-space:pre-line}
+.notice {padding:15px;border-radius:12px;background:#fff6e6;border-right:4px solid #e3a332;font-size:13px}
+.notice strong {color:#805719}
+.cta {background:linear-gradient(120deg,#075da5,#0a83ce);color:#fff;border-radius:25px;padding:35px}
+.cta h2 {margin-top:0}
+.cta p {color:#e0f2ff}
+.cta .btn-outline {color:var(--deep)}
+.contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-row {display:flex;align-items:flex-start;gap:12px;margin:17px 0}
+.contact-icon {font-size:24px}
+footer {background:#062b4d;color:white;padding:40px 0 20px}
+.footer-grid {display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}
+footer p,footer a {color:#d0e2f2;font-size:14px}
+footer h3 {font-size:17px}
+.footer-bottom {border-top:1px solid #ffffff20;margin-top:25px;padding-top:15px;font-size:12px;color:#b9d2e7}
+.whatsapp-float {
+  position:fixed;bottom:20px;left:18px;z-index:900;
+  width:57px;height:57px;border-radius:50%;display:grid;place-items:center;
+  background:#20b96b;color:#fff;font-size:27px;box-shadow:0 5px 20px #0002
+}
+.empty {grid-column:1/-1;text-align:center;padding:25px;color:var(--muted)}
+@media(max-width:850px) {
+  .navlinks {
+    display:none;position:absolute;top:76px;right:0;left:0;
+    padding:18px 5%;background:white;border-bottom:1px solid #e6eef5;
+    flex-direction:column;align-items:stretch;gap:12px
+  }
+  .navlinks.open {display:flex}
+  .menu-btn {display:block}
+  .nav>.btn {display:none}
+  .hero-grid,.about-grid {grid-template-columns:1fr}
+  .hero {padding:45px 0}
+  .hero-visual {min-height:300px}
+  .grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-grid {grid-template-columns:1fr 1fr}
+}
+@media(max-width:540px) {
+  .grid,.contact-grid,.footer-grid {grid-template-columns:1fr}
+  .section {padding:52px 0}
+  .hero-actions .btn {width:100%}
+  .hero-points {gap:8px}
+  .card {padding:19px}
+  .float-card.one {right:0}
+  .float-card.two {left:0}
+}
+</style>
 </head>
+
 <body>
+<div class="topbar">
+  <div class="container">
+    <span>🏥 الرعاية الصحية تبدأ بالاهتمام</span>
+    <span>📍 قرية الرواشدة - القضارف</span>
+  </div>
+</div>
 
-    <div class="container">
-        <!-- الترويسة -->
-        <div class="header">
-            <h1>🏥 عيادة سيف الدين محمد علي</h1>
-            <p>طب عام • القضارف - قرية الراشدية</p>
-        </div>
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand">
+      <span class="brand-logo">✚</span>
+      <span>عيادة سيف الدين محمد علي
+        <small>رعاية طبية واهتمام بصحتك</small>
+      </span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+    <nav class="navlinks" id="navlinks">
+      <a href="#home">الرئيسية</a>
+      <a href="#services">الخدمات</a>
+      <a href="#about">عن العيادة</a>
+      <a href="#library">الموسوعة الطبية</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <a class="btn btn-primary" href="#booking">احجز موعدك</a>
+  </div>
+</header>
 
-        <!-- زر الحجز العصري -->
-        <a href="https://wa.me/249111441216?text=السلام%20عليكم،%20أريد%20حجز%20موعد%20في%20العيادة" target="_blank" class="btn-booking">
-            📅 احجز موعدك الآن عبر الواتساب
-        </a>
-
-        <!-- الموقع -->
-        <div class="card">
-            <div class="card-icon">📍</div>
-            <div class="card-content">
-                <h3>الموقع</h3>
-                <p>قرية الراشدية، ولاية القضارف، السودان.</p>
-            </div>
-        </div>
-
-        <!-- الهاتف -->
-        <div class="card">
-            <div class="card-icon">📞</div>
-            <div class="card-content">
-                <h3>التواصل المباشر</h3>
-                <p>رقم الهاتف والواتساب:</p>
-                <a href="https://wa.me/249111441216" target="_blank" class="whatsapp-link">💬 0111441216</a>
-            </div>
-        </div>
-
-        <!-- ساعات العمل -->
-        <div class="card">
-            <div class="card-icon">⏰</div>
-            <div class="card-content">
-                <h3>ساعات العمل</h3>
-                <p><strong>السبت - الخميس:</strong> طوال اليوم (صباحاً ومساءً)</p>
-                <p><strong>الجمعة:</strong> الفترة المسائية فقط</p>
-            </div>
-        </div>
-
-        <!-- المساعد الطبي -->
-        <div class="chat-container">
-            <div class="chat-header">🤖 اسأل المساعد الطبي الذكي</div>
-            <div class="chat-box" id="chatBox">
-                <div class="message ai-msg">أهلاً بك! أنا المساعد الطبي لعيادة سيف الدين. كيف يمكنني خدمتك اليوم؟</div>
-            </div>
-            <div class="chat-input-group">
-                <input type="text" id="userInput" class="chat-input" placeholder="اكتب استفسارك الطبي هنا..." onkeypress="handleKeyPress(event)">
-                <button class="chat-btn" onclick="sendMessage()">إرسال</button>
-            </div>
-        </div>
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">صحتك أولويتنا</span>
+      <h1>رعاية طبية موثوقة<br><span>لصحة أفضل</span></h1>
+      <p>أهلاً بك في عيادة سيف الدين محمد علي. تعرّف على خدماتنا الطبية، واستفد من المعلومات الصحية، وتواصل معنا للاستفسار عن المواعيد.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#booking">📅 تواصل للحجز</a>
+        <a class="btn btn-outline" href="#services">اكتشف خدماتنا ←</a>
+      </div>
+      <div class="hero-points">
+        <span>✓ اهتمام بالمريض</span>
+        <span>✓ معلومات صحية</span>
+        <span>✓ تواصل مباشر</span>
+      </div>
     </div>
+    <div class="hero-visual" aria-label="رمز طبي">
+      <div class="doctor-circle">
+        <span class="doctor-emoji">🧑‍⚕️</span>
+      </div>
+      <div class="float-card one">🩺 <strong>الرعاية الطبية</strong>اهتمام بصحتك</div>
+      <div class="float-card two">💙 <strong>نحن هنا لمساعدتك</strong>تواصل مع العيادة</div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        async function sendMessage() {
-            const input = document.getElementById('userInput');
-            const chatBox = document.getElementById('chatBox');
-            const message = input.value.trim();
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">خدماتنا</span>
+      <h2>الخدمات الطبية</h2>
+      <p>تعرّف على الخدمات المتوفرة في العيادة وتواصل معنا لتأكيد تفاصيل الخدمة ومواعيدها.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-icon">🩺</div>
+        <h3>الكشف العام</h3>
+        <p>تقييم الحالة الصحية والأعراض وتحديد الحاجة إلى الفحوصات أو المتابعة الطبية.</p>
+        <a class="card-link" href="#booking">استفسر عن الموعد ←</a>
+      </article>
+      <article class="card">
+        <div class="card-icon">🔬</div>
+        <h3>التحاليل والفحوصات</h3>
+        <p>استفسر عن الفحوصات المتاحة وكيفية الاستعداد لها قبل الحضور.</p>
+        <a class="card-link" href="#booking">استفسر عن الفحوصات ←</a>
+      </article>
+      <article class="card">
+        <div class="card-icon">💊</div>
+        <h3>الصيدلية وصرف الأدوية</h3>
+        <p>تواصل للاستفسار عن توفر الأدوية وطريقة صرفها وفق الوصفة الطبية.</p>
+        <a class="card-link" href="#booking">تواصل معنا ←</a>
+      </article>
+      <article class="card">
+        <div class="card-icon">❤️</div>
+        <h3>التوعية الصحية</h3>
+        <p>معلومات مبسطة تساعدك على فهم صحة القلب وأعضاء الجسم.</p>
+        <a class="card-link" href="#library">اقرأ المعلومات ←</a>
+      </article>
+      <article class="card">
+        <div class="card-icon">🧪</div>
+        <h3>التثقيف حول التحاليل</h3>
+        <p>تعرّف على أنواع التحاليل الشائعة وما الذي تقيسه.</p>
+        <a class="card-link" href="#library">استكشف الموسوعة ←</a>
+      </article>
+      <article class="card">
+        <div class="card-icon">📞</div>
+        <h3>الاستفسارات</h3>
+        <p>اتصل بالعيادة للتأكد من الخدمات والمواعيد قبل زيارتك.</p>
+        <a class="card-link" href="#contact">بيانات التواصل ←</a>
+      </article>
+    </div>
+  </div>
+</section>
 
-            if (!message) return;
+<section class="section section-soft" id="about">
+  <div class="container about-grid">
+    <div class="about-art" aria-hidden="true">🩺💙</div>
+    <div>
+      <span class="eyebrow">عن العيادة</span>
+      <h2 style="color:var(--deep);font-size:32px">عيادة سيف الدين محمد علي</h2>
+      <p>عيادة في قرية الرواشدة بولاية القضارف في السودان. يهدف هذا الموقع إلى تسهيل التواصل مع العيادة، والتعريف بالخدمات، وتقديم محتوى صحي تثقيفي للزوار.</p>
+      <ul class="checklist">
+        <li>معلومات واضحة عن الخدمات</li>
+        <li>وسائل مباشرة للتواصل والاستفسار</li>
+        <li>محتوى تثقيفي بلغة عربية مبسطة</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">تواصل مع العيادة</a>
+    </div>
+  </div>
+</section>
 
-            chatBox.innerHTML += `<div class="message user-msg">${message}</div>`;
-            input.value = '';
-            chatBox.scrollTop = chatBox.scrollHeight;
+<section class="section" id="library">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">اعرف أكثر عن صحتك</span>
+      <h2>الموسوعة الطبية</h2>
+      <p>ابحث عن موضوع صحي أو اختر تصنيفاً لقراءة معلومات مبسطة.</p>
+    </div>
+    <input class="med-search" id="medSearch" type="search" placeholder="🔎 ابحث عن القلب أو الكلى أو CBC..." aria-label="البحث في الموسوعة الطبية">
+    <div class="filters" id="filters">
+      <button class="filter active" data-cat="all">كل المواضيع</button>
+      <button class="filter" data-cat="organs">أعضاء الجسم</button>
+      <button class="filter" data-cat="tests">التحاليل</button>
+      <button class="filter" data-cat="health">نصائح صحية</button>
+    </div>
+    <div class="grid" id="medicalGrid"></div>
+    <div class="notice" style="margin-top:25px">
+      <strong>تنبيه طبي:</strong>
+      المحتوى للتثقيف العام ولا يشخّص الأمراض أو يصف العلاج. تفسير الأعراض والنتائج يعتمد على الحالة الفردية وتقييم مختص. اطلب المساعدة الطبية العاجلة عند وجود أعراض خطيرة.
+    </div>
+  </div>
+</section>
 
-            const loadingId = 'loading-' + Date.now();
-            chatBox.innerHTML += `<div class="message ai-msg" id="${loadingId}">جاري التحليل...</div>`;
-            chatBox.scrollTop = chatBox.scrollHeight;
+<section class="section section-soft" id="booking">
+  <div class="container">
+    <div class="cta">
+      <h2>هل تريد الاستفسار أو حجز موعد؟</h2>
+      <p>تواصل مع العيادة عبر الاتصال الهاتفي أو واتساب. يرجى التأكد من الموعد وتوفر الخدمة قبل الحضور.</p>
+      <div class="hero-actions">
+        <a class="btn btn-green" href="https://wa.me/249111441216?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9" target="_blank" rel="noopener">واتساب للحجز</a>
+        <a class="btn btn-outline" href="tel:+249111441216">📞 اتصال هاتفي</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-            try {
-                const response = await fetch('/ask-ai', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: message })
-                });
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">نحن قريبون منك</span>
+      <h2>معلومات التواصل</h2>
+      <p>يمكنك التواصل معنا للاستفسار عن المواعيد والخدمات.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="card">
+        <div class="contact-row">
+          <span class="contact-icon">📍</span>
+          <div><strong>العنوان</strong><br>قرية الرواشدة، القضارف، السودان</div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-icon">📱</span>
+          <div><strong>الهاتف</strong><br><a href="tel:+249111441216" dir="ltr">0111441216</a></div>
+        </div>
+        <div class="contact-row">
+          <span class="contact-icon">💬</span>
+          <div><strong>واتساب</strong><br><a href="https://wa.me/249111441216" target="_blank" rel="noopener">مراسلة العيادة</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🕒</div>
+        <h3>ساعات العمل</h3>
+        <p>السبت إلى الخميس، وفق جدول العيادة.</p>
+        <p>يرجى الاتصال مسبقاً لتأكيد ساعات الفتح والإغلاق ومواعيد يوم الجمعة.</p>
+        <a href="tel:+249111441216" class="btn btn-primary">اتصل لتأكيد المواعيد</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
-                const data = await response.json();
-                document.getElementById(loadingId).innerText = data.reply || "عذراً، لم أتمكن من الحصول على رد.";
-            } catch (error) {
-                document.getElementById(loadingId).innerText = "حدث خطأ في الاتصال بالخادم.";
-            }
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>✚ عيادة سيف الدين محمد علي</h3>
+        <p>رعاية صحية ومعلومات تثقيفية لخدمة أهل قرية الرواشدة والقضارف.</p>
+      </div>
+      <div>
+        <h3>روابط الموقع</h3>
+        <p><a href="#services">الخدمات الطبية</a></p>
+        <p><a href="#library">الموسوعة الطبية</a></p>
+        <p><a href="#booking">الحجز والتواصل</a></p>
+      </div>
+      <div>
+        <h3>تواصل معنا</h3>
+        <p><a href="tel:+249111441216">0111441216</a></p>
+        <p><a href="https://wa.me/249111441216" target="_blank" rel="noopener">واتساب العيادة</a></p>
+        <p>قرية الرواشدة - القضارف</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> عيادة سيف الدين محمد علي. جميع الحقوق محفوظة.
+      <br>المعلومات الطبية هنا للتثقيف العام وليست بديلاً عن الاستشارة الطبية.
+    </div>
+  </div>
+</footer>
 
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                sendMessage();
-            }
-        }
-    </script>
+<a class="whatsapp-float" href="https://wa.me/249111441216" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">✆</a>
 
+<div class="med-dialog" id="medDialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+  <article class="dialog-panel">
+    <button class="dialog-close" id="dialogClose">إغلاق ✕</button>
+    <div style="clear:both"></div>
+    <h2 id="dialogTitle"></h2>
+    <div id="dialogBody" class="dialog-body"></div>
+  </article>
+</div>
+
+<script>
+const topics = [
+ {title:"القلب",icon:"❤️",cat:"organs",desc:"كيف يضخ القلب الدم؟",
+ body:"القلب عضلة تضخ الدم إلى الرئتين وسائر الجسم. يتكون من أربع حجرات، وتساعد الصمامات على توجيه الدم. النشاط البدني المناسب، والغذاء المتوازن، وتجنب التدخين تساعد في حماية القلب."},
+ {title:"الدماغ",icon:"🧠",cat:"organs",desc:"مركز التفكير والحركة والذاكرة.",
+ body:"الدماغ ينظم التفكير والذاكرة والحركة والإحساس. يحتاج إلى الأكسجين والطاقة باستمرار. النوم الكافي والنشاط البدني والتغذية المتوازنة تدعم صحة الدماغ."},
+ {title:"الرئتان",icon:"🫁",cat:"organs",desc:"التنفس وتبادل الغازات.",
+ body:"تساعد الرئتان على إدخال الأكسجين إلى الدم والتخلص من ثاني أكسيد الكربون. تجنب التدخين والدخان، واطلب تقييماً طبياً عند استمرار السعال أو ظهور ضيق التنفس."},
+ {title:"الكلى",icon:"🫘",cat:"organs",desc:"تنقية الدم وتنظيم السوائل.",
+ body:"تزيل الكلى الفضلات من الدم وتساعد في تنظيم السوائل والأملاح وضغط الدم. ضبط السكري والضغط وتجنب الاستخدام العشوائي للمسكنات يساعد في حماية الكلى."},
+ {title:"الكبد",icon:"🧬",cat:"organs",desc:"معالجة المواد والمساعدة في الهضم.",
+ body:"يساعد الكبد في معالجة المغذيات وإنتاج الصفراء والتعامل مع مواد عديدة في الجسم. تجنب الجرعات الزائدة من الأدوية، واسأل مختصاً عن الوقاية من التهاب الكبد."},
+ {title:"المعدة والأمعاء",icon:"🥗",cat:"organs",desc:"هضم الطعام وامتصاص المغذيات.",
+ body:"تساعد المعدة والأمعاء على هضم الطعام وامتصاص المغذيات والماء. الألياف الموجودة في الخضروات والفواكه والحبوب الكاملة تدعم صحة الجهاز الهضمي."},
+ {title:"تحليل CBC",icon:"🩸",cat:"tests",desc:"تعداد خلايا الدم الكامل.",
+ body:"يقيس CBC خلايا الدم الحمراء والبيضاء والصفائح، ويشمل عادة قياس الهيموغلوبين. قد يساعد في تقييم فقر الدم واضطرابات أخرى، لكن النتيجة لا تكفي وحدها للتشخيص."},
+ {title:"سكر الدم",icon:"🧪",cat:"tests",desc:"قياس الجلوكوز في الدم.",
+ body:"تشمل فحوصات السكر قياس الجلوكوز الصائم والعشوائي واختبار HbA1c الذي يعكس متوسط السكر خلال نحو ثلاثة أشهر. يختلف تفسير النتيجة بحسب نوع الفحص والحالة الصحية."},
+ {title:"فحص الملاريا",icon:"🔬",cat:"tests",desc:"الكشف عن طفيليات الملاريا.",
+ body:"يمكن الكشف عن الملاريا بالفحص المجهري للدم أو باختبار تشخيص سريع. الحمى أو القشعريرة في المناطق التي تنتشر فيها الملاريا تستدعي تقييماً سريعاً وإجراء الفحص المناسب."},
+ {title:"ضغط الدم",icon:"💓",cat:"health",desc:"لماذا نتابع قياس الضغط؟",
+ body:"قد يرتفع ضغط الدم دون أعراض. للحصول على قراءة أدق، اجلس بهدوء خمس دقائق واستخدم كفة مناسبة للذراع. ناقش القراءات المتكررة مع مقدم الرعاية الصحية."},
+ {title:"التغذية المتوازنة",icon:"🍎",cat:"health",desc:"عادات تدعم صحة الجسم.",
+ body:"نوّع بين الخضروات والفواكه والحبوب الكاملة ومصادر البروتين. قلل الملح والسكريات المضافة، واشرب الماء وفق احتياجاتك وحالتك الصحية."},
+ {title:"النشاط البدني",icon:"🚶",cat:"health",desc:"الحركة المنتظمة مفيدة للصحة.",
+ body:"يساعد النشاط البدني المنتظم في دعم صحة القلب والعضلات والنوم. ابدأ بما يناسب قدرتك وزد النشاط تدريجياً. توقف واطلب المساعدة إذا ظهرت أعراض مقلقة أثناء التمرين."},
+ {title:"النوم الصحي",icon:"🌙",cat:"health",desc:"النوم جزء من العناية بصحتك.",
+ body:"يساعد النوم المنتظم في دعم التركيز والمزاج والصحة العامة. حاول الالتزام بموعد نوم واستيقاظ منتظم، وقلل المنبهات مساءً إذا كانت تؤثر على نومك."}
+];
+
+const grid = document.getElementById("medicalGrid");
+const search = document.getElementById("medSearch");
+const dialog = document.getElementById("medDialog");
+const dialogTitle = document.getElementById("dialogTitle");
+const dialogBody = document.getElementById("dialogBody");
+let activeCategory = "all";
+
+function renderTopics() {
+  const q = search.value.trim().toLocaleLowerCase("ar");
+  const list = topics.filter(t =>
+    (activeCategory === "all" || t.cat === activeCategory) &&
+    (t.title + " " + t.desc + " " + t.body).toLocaleLowerCase("ar").includes(q)
+  );
+  grid.replaceChildren();
+
+  if (!list.length) {
+    const empty = document.createElement("p");
+    empty.className = "empty";
+    empty.textContent = "لم نجد موضوعاً مطابقاً. جرّب كلمة أخرى.";
+    grid.append(empty);
+    return;
+  }
+
+  list.forEach(t => {
+    const card = document.createElement("article");
+    card.className = "card med-card";
+    const icon = document.createElement("div");
+    icon.className = "card-icon";
+    icon.textContent = t.icon;
+    const h = document.createElement("h3");
+    h.textContent = t.title;
+    const p = document.createElement("p");
+    p.textContent = t.desc;
+    const b = document.createElement("button");
+    b.className = "btn btn-primary";
+    b.textContent = "اقرأ المزيد ←";
+    b.addEventListener("click", () => {
+      dialogTitle.textContent = t.icon + " " + t.title;
+      dialogBody.textContent = t.body;
+      dialog.classList.add("open");
+      document.getElementById("dialogClose").focus();
+    });
+    card.append(icon,h,p,b);
+    grid.append(card);
+  });
+}
+
+document.querySelectorAll(".filter").forEach(btn => {
+  btn.addEventListener("click", () => {
+    activeCategory = btn.dataset.cat;
+    document.querySelectorAll(".filter").forEach(x =>
+      x.classList.toggle("active", x === btn)
+    );
+    renderTopics();
+  });
+});
+search.addEventListener("input", renderTopics);
+
+function closeDialog() {
+  dialog.classList.remove("open");
+}
+document.getElementById("dialogClose").addEventListener("click", closeDialog);
+dialog.addEventListener("click", e => {
+  if (e.target === dialog) closeDialog();
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeDialog();
+});
+
+const menuBtn = document.getElementById("menuBtn");
+const navlinks = document.getElementById("navlinks");
+menuBtn.addEventListener("click", () => {
+  navlinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", navlinks.classList.contains("open"));
+});
+navlinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  navlinks.classList.remove("open");
+}));
+document.getElementById("year").textContent = new Date().getFullYear();
+renderTopics();
+</script>
 </body>
 </html>
